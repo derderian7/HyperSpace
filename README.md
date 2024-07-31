@@ -3,7 +3,7 @@
 This is a three-tier application consisting of a React client, a Node.js service, and a Python service with a PostgreSQL database. The application is designed to showcase the interaction between different services using Docker containers.
 
 ## Project Structure
-
+```
 project-root/
 │
 ├── client/
@@ -26,7 +26,7 @@ project-root/
 │
 ├── docker-compose.yml
 └── README.md
-
+```
 ## Prerequisites
 
 Ensure you have the following installed on your machine:
@@ -38,13 +38,15 @@ Ensure you have the following installed on your machine:
 
 1. **Clone the Repository**
 
-   ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
+   ```
+   git clone https://github.com/derderian7/HyperSpace.git
    cd your-repo-name
    ```
 
 2. **Build and Run the Docker Containers**
+   ```
    docker-compose up --build
+   ```
    This command will build the Docker images and start the containers as defined in the docker-compose.yml file.
 
 3. **Access the Application**
@@ -56,17 +58,17 @@ Ensure you have the following installed on your machine:
 **Running Linters**
 
 To run linters for the Python service, execute the following command:
-
+```
 docker-compose run --rm python_service flake8 .
-
+```
 To run black and check the Python code formatting, execute:
-
+```
 docker-compose run --rm python_service black --check .
-
+```
 To automatically reformat the code using black, run:
-
+```
 docker-compose run --rm python_service black .
-
+```
 **Directory Details**:
 
 client/: Contains the React frontend application.
