@@ -50,6 +50,7 @@ Ensure you have the following installed on your machine:
    This command will build the Docker images and start the containers as defined in the docker-compose.yml file.
 
 3. **Access the Application**
+   
    The React client will be available at: http://localhost:3000
    The Node.js service will be running at: http://localhost:3002
    The Python service will be running at: http://localhost:5000
@@ -104,10 +105,10 @@ PUT /elements/: Updates an existing element in the PostgreSQL database.
 **Stopping the Application**
 
 To stop the application and remove the containers, run:
-
+```
 docker-compose down
-
+```
 **Troubleshooting**
 
-Ensure all Docker containers are running by executing docker ps.
+Ensure all Docker containers are running by executing ``` docker ps ```.
 Check the logs of a specific container using docker logs <container_id>.
