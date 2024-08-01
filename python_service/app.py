@@ -49,6 +49,8 @@ def get_elements():
 def add_element():
     try:
         new_element = request.json["name"]
+        if not new_element or new_element.strip() == "":
+            return jsonify({"error": "Element name cannot be empty"}), 400
         cursor.execute("INSERT INTO elements (name) VALUES (%s)", (new_element,))
         conn.commit()
         return jsonify({"message": "Element added"}), 201
@@ -62,6 +64,8 @@ def add_element():
 def update_element(id):
     try:
         new_name = request.json["name"]
+        if not new_name or new_name.strip() == "":
+            return jsonify({"error": "Element name cannot be empty"}), 400
         cursor.execute("UPDATE elements SET name = %s WHERE id = %s", (new_name, id))
         conn.commit()
         return jsonify({"message": "Element updated"}), 200
