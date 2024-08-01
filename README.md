@@ -42,14 +42,17 @@ Ensure you have the following installed on your machine:
    git clone https://github.com/derderian7/HyperSpace.git
    cd HyperSpace
    ```
+2. **Edit the .env.example**
 
-2. **Build and Run the Docker Containers**
+   Edit the .env.example to be .env only and add your variables
+
+3. **Build and Run the Docker Containers**
    ```
    docker-compose up --build
    ```
    This command will build the Docker images and start the containers as defined in the docker-compose.yml file.
 
-3. **Access the Application**
+4. **Access the Application**
    
    The React client will be available at: http://localhost:3000
    The Node.js service will be running at: http://localhost:3002
