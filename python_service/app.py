@@ -3,6 +3,9 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import psycopg2
 import logging
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Create a new Flask application instance
 app = Flask(__name__)
@@ -29,6 +32,7 @@ except Exception as e:
     logging.error("Error connecting to the database: %s", e)
     raise
 
+
 # Define a route to fetch all elements from the database
 @app.route("/elements", methods=["GET"])
 def get_elements():
@@ -43,6 +47,7 @@ def get_elements():
         logging.error("Error fetching elements: %s", e)
         # Return an error response with a 500 status code
         return jsonify({"error": "Error fetching elements"}), 500
+
 
 # Define a route to add a new element to the database
 @app.route("/elements", methods=["POST"])
@@ -61,6 +66,7 @@ def add_element():
         # Return an error response with a 500 status code
         return jsonify({"error": "Error adding element"}), 500
 
+
 # Define a route to update an existing element by ID
 @app.route("/elements/<int:id>", methods=["PUT"])
 def update_element(id):
@@ -77,6 +83,7 @@ def update_element(id):
         logging.error("Error updating element: %s", e)
         # Return an error response with a 500 status code
         return jsonify({"error": "Error updating element"}), 500
+
 
 # Run the Flask application if this script is executed directly
 if __name__ == "__main__":
