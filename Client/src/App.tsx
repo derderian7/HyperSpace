@@ -32,7 +32,11 @@ function App() {
   };
 
   // Function to add a new element to the server
-  const addElement = async () => {
+    const addElement = async () => {
+    if (newElement.trim() === "") {
+      alert("Element name cannot be empty");
+      return;
+    }
     try {
       await axios.post("http://localhost:3002/elements", { name: newElement });
       setNewElement("");
@@ -43,7 +47,11 @@ function App() {
   };
 
   // Function to update an existing element on the server
-  const updateElement = async (id: number) => {
+    const updateElement = async (id: number) => {
+    if (editElementName.trim() === "") {
+      alert("Element name cannot be empty");
+      return;
+    }
     try {
       await axios.put(`http://localhost:3002/elements/${id}`, {
         name: editElementName,
