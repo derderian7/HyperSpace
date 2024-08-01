@@ -40,7 +40,7 @@ Ensure you have the following installed on your machine:
 
    ```
    git clone https://github.com/derderian7/HyperSpace.git
-   cd your-repo-name
+   cd HyperSpace
    ```
 
 2. **Build and Run the Docker Containers**
