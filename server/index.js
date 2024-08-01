@@ -15,12 +15,10 @@ app.use(bodyParser.json());
 // Route to fetch all elements
 app.get("/elements", async (req, res) => {
   try {
-    // Make a GET request to the Python service to fetch elements
     const response = await axios.get("http://python_service:5000/elements");
     // Send the response data back to the client
     res.json(response.data);
   } catch (error) {
-    // Log and handle any errors
     console.error("Error fetching elements:", error);
     res.status(500).json({ error: "Error fetching elements" });
   }
@@ -37,7 +35,6 @@ app.post("/elements", async (req, res) => {
     // Send the response data back to the client
     res.json(response.data);
   } catch (error) {
-    // Log and handle any errors
     console.error("Error adding element:", error);
     res.status(500).json({ error: "Error adding element" });
   }
@@ -54,7 +51,6 @@ app.put("/elements/:id", async (req, res) => {
     // Send the response data back to the client
     res.json(response.data);
   } catch (error) {
-    // Log and handle any errors
     console.error("Error updating element:", error);
     res.status(500).json({ error: "Error updating element" });
   }
